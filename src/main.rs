@@ -30,6 +30,28 @@ fn transpose2(matrix: [[i32; 3]; 3]) -> [[i32; 3]; 3] {
     transposed
 }
 
+// Calculate the magnitude of a vector by summing the squares of its coordinates
+// and taking the square root. Use the `sqrt()` method to calculate the square
+// root, like `v.sqrt()`.
+
+fn magnitude(v: &[f64; 3]) -> f64 {
+    let mut r = 0.0;
+    for elem in v {
+        r += elem * elem;
+    }
+    r.sqrt()
+}
+
+// Normalize a vector by calculating its magnitude and dividing all of its
+// coordinates by that magnitude.
+
+fn normalize(v: &mut [f64; 3]) {
+    let m = magnitude(v);
+    for elem in v {
+        *elem /= m;
+    }
+}
+
 fn main() {
     // Exercise: Fibonacci
     // ===================
@@ -58,4 +80,19 @@ fn main() {
     dbg!(matrix);
     let transposed = transpose(matrix);
     dbg!(transposed);
+    println!();
+
+    // Exercise: Geometry
+    // ==================
+    println!("Exercise: Geometry");
+    println!("==================");
+    println!(
+        "Magnitude of a unit vector: {}",
+        magnitude(&[0.0, 1.0, 0.0])
+    );
+
+    let mut v = [1.0, 2.0, 9.0];
+    println!("Magnitude of {v:?}: {}", magnitude(&v));
+    normalize(&mut v);
+    println!("Magnitude of {v:?} after normalization: {}", magnitude(&v));
 }

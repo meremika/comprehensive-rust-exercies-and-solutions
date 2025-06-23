@@ -1,5 +1,7 @@
 #![allow(unused)]
 
+use comprehensive_rust_exercies_and_solutions::logger::{Logger, StderrLogger, VerbosityFilter};
+
 fn fib(n: u32) -> u32 {
     if n < 2 { n } else { fib(n - 2) + fib(n - 1) }
 }
@@ -165,4 +167,16 @@ fn main() {
     );
     println!("The car door closed: {:?}", car_door_closed());
     println!("The car has arrived on the 3rd floor: {:?}", car_arrived(3));
+    println!();
+
+    // Exercise: Logger Trait
+    // ======================
+    println!("Exercise: Logger Trait");
+    println!("======================");
+    let logger = VerbosityFilter {
+        max_verbosity: 3,
+        inner: StderrLogger,
+    };
+    logger.log(5, "FYI");
+    logger.log(2, "Uhoh");
 }

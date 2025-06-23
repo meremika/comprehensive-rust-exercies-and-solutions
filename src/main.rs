@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 fn fib(n: u32) -> u32 {
     if n < 2 { n } else { fib(n - 2) + fib(n - 1) }
 }
@@ -12,7 +14,34 @@ fn collatz_length(mut n: i32) -> u32 {
     length
 }
 
+fn transpose(matrix: [[i32; 3]; 3]) -> [[i32; 3]; 3] {
+    let [[a, b, c], [d, e, f], [g, h, i]] = matrix;
+    [[a, d, g], [b, e, h], [c, f, i]]
+}
+
+#[allow(clippy::needless_range_loop)]
+fn transpose2(matrix: [[i32; 3]; 3]) -> [[i32; 3]; 3] {
+    let mut transposed = [[0; 3]; 3];
+    for i in 0..3 {
+        for j in 0..3 {
+            transposed[i][j] = matrix[j][i];
+        }
+    }
+    transposed
+}
+
 fn main() {
     println!("fib(20) = {}", fib(20));
+
     println!("collatz_length(11) = {}", collatz_length(11)); // should be 15
+
+    let matrix = [
+        [101, 102, 103], // <-- the comment makes rustfmt add a newline
+        [201, 202, 203],
+        [301, 302, 303],
+    ];
+
+    dbg!(matrix);
+    let transposed = transpose(matrix);
+    dbg!(transposed);
 }

@@ -31,10 +31,24 @@ fn transpose2(matrix: [[i32; 3]; 3]) -> [[i32; 3]; 3] {
 }
 
 fn main() {
+    // Exercise: Fibonacci
+    // ===================
+    println!("Exercise: Fibonacci");
+    println!("===================");
     println!("fib(20) = {}", fib(20));
+    println!();
 
+    // Exercise: Collatz Sequence
+    // ==========================
+    println!("Exercise: Collatz Sequence");
+    println!("==========================");
     println!("collatz_length(11) = {}", collatz_length(11)); // should be 15
+    println!();
 
+    // Exercise: Nested Arrays
+    // =======================
+    println!("Exercise: Nested Arrays");
+    println!("=======================");
     let matrix = [
         [101, 102, 103], // <-- the comment makes rustfmt add a newline
         [201, 202, 203],

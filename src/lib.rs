@@ -1,3 +1,4 @@
+pub mod binary_tree;
 pub mod builder;
 pub mod closures;
 pub mod counter;

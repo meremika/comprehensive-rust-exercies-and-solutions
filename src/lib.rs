@@ -6,4 +6,5 @@ pub mod expression_evaluation;
 pub mod generic_min;
 pub mod health_statistics;
 pub mod logger;
+pub mod protobuf;
 pub mod rot13;

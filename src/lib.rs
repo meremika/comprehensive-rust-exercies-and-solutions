@@ -5,6 +5,7 @@ pub mod counter;
 pub mod expression_evaluation;
 pub mod generic_min;
 pub mod griderator;
+pub mod gui;
 pub mod health_statistics;
 pub mod iterator_method_chaining;
 pub mod logger;

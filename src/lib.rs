@@ -9,5 +9,6 @@ pub mod gui;
 pub mod health_statistics;
 pub mod iterator_method_chaining;
 pub mod logger;
+pub mod luhn;
 pub mod protobuf;
 pub mod rot13;

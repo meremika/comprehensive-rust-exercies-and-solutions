@@ -4,6 +4,7 @@ pub mod closures;
 pub mod counter;
 pub mod expression_evaluation;
 pub mod generic_min;
+pub mod griderator;
 pub mod health_statistics;
 pub mod logger;
 pub mod protobuf;
